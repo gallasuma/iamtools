@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tool Suggestion</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2e4053;
+        }
+
+        .question {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            color: #555;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Styling for radio buttons */
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"] + label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] + label:before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        input[type="radio"]:checked + label:before {
+            content: '✓';
+            font-size: 16px;
+            line-height: 16px;
+            text-align: center;
+            background-color: #4caf50;
+            border: none;
+            color: #fff;
+        }
+
+        /* Checkbox styling */
+        .checkbox-option input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkbox-option label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-option label:before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .checkbox-option input[type="checkbox"]:checked + label:before {
+            content: '✓';
+            font-size: 16px;
+            line-height: 16px;
+            text-align: center;
+            background-color: #fff;
+            border: none;
+            color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>IAM TOOL SUGGESTION</h1>
+        <form id="questionnaire">
+            <div class="question">
+    <label for="organizationScale">• What is the scale or magnitude of your organization?</label>
+    <select id="organizationScale" name="organizationScale">
+        <option value="" selected disabled>Select organization scale</option>
+        <option value="Small Enterprise (&lt;1000 employees)">Small Enterprise (&lt;1000 employees)</option>
+        <option value="Medium Enterprise (1000-4999 employees)">Medium Enterprise (1000-4999 employees)</option>
+        <option value="Large Enterprise (5000-49999 employees)">Large Enterprise (5000-49999 employees)</option>
+        <option value="Major Enterprise (&gt;50000 employees)">Major Enterprise (&gt;50000 employees)</option>
+    </select>
+</div>
+
+            <div class="question">
+    <label for="organizationBudget">• What is the financial allocation or budget of your organization?</label>
+    <select id="organizationBudget" name="organizationBudget">
+        <option value="" selected disabled>Organization budget</option>
+        <option value="Micro-scale: &lt;$10000">Micro-scale: &lt;$10000</option>
+        <option value="Small-scale: $10000 - $50000">Small-scale: $10000 - $50000</option>
+        <option value="Moderate-scale: $50000 - $100000">Moderate-scale: $50000 - $100000</option>
+        <option value="Large-scale: &gt;$100000">Large-scale: &gt;$100000</option>
+    </select>
+</div>
+
+            <div class="question">
+                <label>• For what type of environment are you exploring options?</label>
+                <div class="radio-container">
+                    <div class="radio-option">
+                        <input type="radio" id="cloud" name="environment" value="Cloud">
+                        <label for="cloud">Cloud</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="onPremise" name="environment" value="On Premise">
+                        <label for="onPremise">On Premise</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="hybrid" name="environment" value="Hybrid">
+                        <label for="hybrid">Hybrid</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <label>• What features hold significance for you?</label>
+                <div class="checkbox-options">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="feature1" name="feature1" value="Feature 1">
+                        <label for="feature1">Identity Governance and Administration</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="feature2" name="feature2" value="Feature 2">
+                        <label for="feature2">Privilege and Access Management</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="feature3" name="feature3" value="Feature 3">
+                        <label for="feature3">Identity and Access Management</label>
+                    </div>
+                </div>
+            </div>
+<div class="question">
+                <label>• Is there an Identity and Access Management tool currently in use within your organization?</label>
+                <div class="radio-container">
+                    <div class="radio-option">
+                        <input type="radio" id="iamYes" name="iamToolInUse" value="Yes" onclick="showChallenges()">
+                        <label for="iamYes">Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="iamNo" name="iamToolInUse" value="No" onclick="hideChallenges()">
+                        <label for="iamNo">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question" id="challengesQuestion" style="display: none;">
+                <label>• What challenges is the current tool encountering?</label>
+		<input type="text" id="challengesQuestion" name="challengesQuestion" placeholder="Challenges faced by organisation">
+            </div>
+<div class="question" id="specificRequirements" style="display: none;">
+    <label>• What specific requirements do you have for the new tool?</label>
+    <input type="text" id="specificRequirementsInput" name="specificRequirements" placeholder="Enter specific requirements">
+</div>
+<div class="question" id="userDataSourceQuestion" style="display: none;">
+                <label>• From which source would you prefer to extract user data?</label>
+                <input type="text" id="userDataSourceInput" name="userDataSource" placeholder="HRMS, ERP, or Peoplesoft">
+            </div>
+
+            <div class="question" id="selfServiceSignificanceQuestion" style="display: none;">
+                <label>• What is the significance of self-service capabilities for you?</label>
+                <select id="selfServiceSignificance" name="selfServiceSignificance">
+		    <option value="" selected disabled>Self-service capabilities</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+
+            <div class="question" id="customizationImportanceQuestion" style="display: none;">
+                <label>• What level of importance do you assign to the tool's customization capabilities?</label>
+                <select id="customizationImportance" name="customizationImportance">
+		    <option value="" selected disabled>Customization importance</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+<div class="question" id="accountAssetImportanceQuestion" style="display: none;">
+    <label>• Which holds greater importance: account management or asset management?</label>
+    <select id="accountAssetImportance" name="accountAssetImportance">
+	<option value="" selected disabled>Account/Asset</option>
+        <option value="Account Management">Account Management</option>
+        <option value="Asset Management">Asset Management</option>
+    </select>
+</div>
+
+<div class="question" id="privilegedVulnerabilitySignificanceQuestion" style="display: none;">
+    <label>• Which holds more significance for you?</label>
+    <select id="privilegedVulnerabilitySignificance" name="privilegedVulnerabilitySignificance">
+<option value="" selected disabled>PAM significance</option>
+        <option value="Privileged Access Management Capabilities">Privileged Access Management Capabilities</option>
+        <option value="Vulnerability Assessment and Patch Management Features">Vulnerability Assessment and Patch Management Features</option>
+    </select>
+</div>
+<div class="question" id="additionalQuestions3" style="display: none;">
+    <div>
+        <label>• What is the need for integrating applications in varied landscapes?</label>
+        <select id="integratingApplications" name="integratingApplications">
+<option value="" selected disabled>Need for integrating applications</option>
+            <option value="Option 1">Low</option>
+            <option value="Option 2">High</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+<br>
+    <div>
+        <label>• Which holds more significance for you?</label>
+        <select id="significanceForYou" name="significanceForYou">
+<option value="" selected disabled>IAM significance</option>
+            <option value="Customer Identity and Access Management">Customer Identity and Access Management</option>
+            <option value="Single Sign On">Single Sign On</option>
+            <option value="Identity Relationship Management">Identity Relationship Management</option>
+            <option value="API Security">API Security</option>
+            <option value="IoT Identity Management and Access Management">IoT Identity Management and Access Management</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+</div>
+
+
+            <button type="button" onclick="submitAnswers()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+function showChallenges() {
+        document.getElementById('challengesQuestion').style.display = 'block';
+        toggleSpecificRequirementsDisplay();
+	showAdditionalQuestions();
+showFeature2Questions();
+    }
+
+    function hideChallenges() {
+        document.getElementById('challengesQuestion').style.display = 'none';
+        toggleSpecificRequirementsDisplay();
+	showAdditionalQuestions();
+showFeature2Questions();
+    }
+
+    function toggleSpecificRequirementsDisplay() {
+        const isIAMInUse = document.querySelector('input[name="iamToolInUse"]:checked');
+        const specificRequirementsQuestion = document.getElementById('specificRequirements');
+
+        if (isIAMInUse && (isIAMInUse.value === 'Yes' || isIAMInUse.value === 'No')) {
+            specificRequirementsQuestion.style.display = 'block';
+        } else {
+            specificRequirementsQuestion.style.display = 'none';
+        }
+    }
+document.querySelectorAll('input[name="feature1"]').forEach(function(elem) {
+            elem.addEventListener('change', function() {
+                showAdditionalQuestions();
+            });
+        });
+
+        document.querySelectorAll('input[name="iamToolInUse"]').forEach(function(elem) {
+            elem.addEventListener('change', function() {
+                showAdditionalQuestions();
+            });
+        });
+document.querySelectorAll('input[name="feature2"]').forEach(function(elem) {
+            elem.addEventListener('change', function() {
+                showFeature2Questions();
+            });
+        });
+
+        document.querySelectorAll('input[name="iamToolInUse"]').forEach(function(elem) {
+            elem.addEventListener('change', function() {
+                showFeature2Questions();
+            });
+        });
+        // Function to show additional questions based on selections
+        function showAdditionalQuestions() {
+           const featureIAM = document.querySelector('input[name="feature1"]:checked');
+    const isIAMInUse = document.querySelector('input[name="iamToolInUse"]:checked');
+
+    if (featureIAM && featureIAM.value === 'Feature 1' && isIAMInUse && (isIAMInUse.value === 'Yes' || isIAMInUse.value === 'No')) {
+        document.getElementById('userDataSourceQuestion').style.display = 'block';
+        document.getElementById('selfServiceSignificanceQuestion').style.display = 'block';
+        document.getElementById('customizationImportanceQuestion').style.display = 'block';
+    } else {
+        document.getElementById('userDataSourceQuestion').style.display = 'none';
+        document.getElementById('selfServiceSignificanceQuestion').style.display = 'none';
+        document.getElementById('customizationImportanceQuestion').style.display = 'none';
+    }
+        }
+function showFeature2Questions() {
+       const feature2 = document.querySelector('input[name="feature2"]:checked');
+    const isIAMInUse2 = document.querySelector('input[name="iamToolInUse"]:checked');
+    const accountAssetQuestion = document.getElementById('accountAssetImportanceQuestion');
+    const privilegedVulnerabilityQuestion = document.getElementById('privilegedVulnerabilitySignificanceQuestion');
+
+    if (feature2 && feature2.value === 'Feature 2' && isIAMInUse2 && (isIAMInUse2.value === 'Yes' || isIAMInUse2.value === 'No')) {
+        accountAssetQuestion.style.display = 'block';
+        privilegedVulnerabilityQuestion.style.display = 'block';
+    } else {
+        accountAssetQuestion.style.display = 'none';
+        privilegedVulnerabilityQuestion.style.display = 'none';
+    }
+    }
+
+function showFeature3Questions() {
+        const feature3 = document.querySelector('input[name="feature3"]:checked');
+        const isIAMInUse = document.querySelector('input[name="iamToolInUse"]:checked');
+        const additionalQuestions = document.getElementById('additionalQuestions3');
+
+        if (feature3 && feature3.value === 'Feature 3' && isIAMInUse && (isIAMInUse.value === 'Yes' || isIAMInUse.value === 'No')) {
+            additionalQuestions.style.display = 'block';
+        } else {
+            additionalQuestions.style.display = 'none';
+        }
+    }
+
+    document.querySelectorAll('input[name="feature3"]').forEach(function(elem) {
+        elem.addEventListener('change', function() {
+            showFeature3Questions();
+        });
+    });
+
+    document.querySelectorAll('input[name="iamToolInUse"]').forEach(function(elem) {
+        elem.addEventListener('change', function() {
+            showFeature3Questions();
+        });
+    });
+
+
+function submitAnswers() {
+    const organizationScale = document.getElementById('organizationScale').value;
+    const organizationBudget = document.getElementById('organizationBudget').value;
+    const selectedEnvironment = document.querySelector('input[name="environment"]:checked');
+    const isIAMInUse = document.querySelector('input[name="iamToolInUse"]:checked');
+
+    // Additional questions
+    const userDataSource = document.getElementById('userDataSourceInput').value;
+    const selfServiceSignificance = document.getElementById('selfServiceSignificance').value;
+    const customizationImportance = document.getElementById('customizationImportance').value;
+	const accountAssetImportance = document.getElementById('accountAssetImportance').value;
+        const privilegedVulnerabilitySignificance = document.getElementById('privilegedVulnerabilitySignificance').value;
+const additionalQuestions = document.getElementById('additionalQuestions3');
+        const integratingApplications = additionalQuestions.querySelector('#integratingApplications').value;
+        const significanceForYou = additionalQuestions.querySelector('#significanceForYou').value;
+
+if (
+        selectedEnvironment &&
+        selectedEnvironment.value === 'Cloud' &&
+        document.getElementById('feature1').checked
+    ) {
+        // Suggest the Saviynt Tool
+        alert('Based on your selections, we suggest considering the Saviynt Tool.');
+    }
+
+
+        }
+    </script>
+</body>
+</html>
